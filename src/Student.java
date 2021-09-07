@@ -1,19 +1,10 @@
-/**
- * Defines the base properties of the student.
- * @author Harishkarthik Kumaran Pillai
- */
+package application;
 public abstract class Student implements Comparable 
 	{
 		private String fname;
 		private String lname;
 		protected int credit;
 		
-	/**
-	 * Constructs the base requirements for the student object.
-	 * @param newFname is the first name of the student
-	 * @param newLname is the last name of the student
-	 * @param newCredit is the amount of credits the student is attempting 
-	 */
 		public Student(String newFname, String newLname, int newCredit)
 		{
 			fname = newFname;
@@ -27,11 +18,6 @@ public abstract class Student implements Comparable
 		//Hint: use the compareToIgnoreCase methods of the String class to compare fname
 		//and lname; compare the fname first, then lname; names are not case-sensitive;
 		
-		/**
-		 * Compares the first and last name of the input (obj) to the values stored in the object. Implementation 
-		 * of compareTo from the comparable interface.
-		 * @return 0 if equal, -1 if fname and lname < obj's and 1 if fname and lname is > obj's
-		 */
 		public int compareTo(Object obj)
 		{
 			Student tempVar = (Student) obj;
@@ -68,7 +54,17 @@ public abstract class Student implements Comparable
 		
 		//compute the tuition due; concrete implementation is required in the subclasses.
 		public abstract int tuitionDue();
-
+		
+	  	public void TestbedStudent()
+	    {
+			Student a,b,c,d;
+			a = new Outstate("bob","bab",0,true);
+			b = new Outstate("bob","abb",0,true);
+			c = new Outstate("cat","f",0,true);
+			d = new Outstate("dave","f",0,true);
+			
+			System.out.println(a.compareTo(b));
+		   }
 	}
 	
 

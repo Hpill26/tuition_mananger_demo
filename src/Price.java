@@ -1,9 +1,6 @@
-/**
- * This class defines the common constants for each different situation. 
- @author Brian Moran
- */
-public class Price 
-{
+package application;
+
+public class Price {
 	public static final int UNIVERSITY_FEE = 1441;
 	public static final int UNIVERSITY_FEE_PART_TIME = 846;
 	public static final int PER_CREDIT_INSTATE = 433;

@@ -1,31 +1,15 @@
-/**
- * International is a child of the student class and is designed to accommodate International
- *  students who are either exchange students or regular students. Provides a toString 
- * and tuition due method which calculates the correct tuition due for this case. 
- * 
- * @author Harishkarthik Kumaran Pillai
- */
+package application;
+
 public class International extends Student{
 
 	private boolean exchange;
 	
-	/**
-	 * Constructs the International student object while also incorporating the object requirements of the Superclass (student).
-	 * @param fname is the first name of the student
-	 * @param lname is the last name of the student
-	 * @param credit is the number of credits the student is attempting
-	 * @param newExchange indicates whether or not the student is a exchange student; true if exchange, false otherwise
-	 */
 	public International(String fname, String lname, int credit,boolean newExchange) {
 		super(fname, lname, credit);
 		
 		exchange = newExchange;
 	}
 	
-	/**
-	 *  Calculates the exact tuition an international student owes to the institution
-	 *  by taking into account their part time status and exchange student status. 
-	 */
 	public int tuitionDue() 
 	{	
 		boolean partTime = false;
@@ -47,7 +31,15 @@ public class International extends Student{
 		
 		if(exchange)
 		{
-				tuitionDue = universityFee + internationalFee;	
+			if(partTime)
+			{
+				universityFee = Price.UNIVERSITY_FEE_PART_TIME;
+				tuitionDue = universityFee + internationalFee;
+			}
+			else
+			{
+				tuitionDue = universityFee + internationalFee;
+			}	
 		}
 		else
 		{
@@ -80,16 +72,5 @@ public class International extends Student{
 	}
 	
 	//testbed
-	public void testbedInternational()
-	{
-		International test1 = new International("harry","pillai",18,true);
-		International test2 = new International("harry","pillai",9,false);
-		
-		System.out.println(test1.toString());
-		System.out.println(test1.tuitionDue());
-		
-		System.out.println(test2.toString());
-		System.out.println(test2.tuitionDue());
-		
-	}
+
 }

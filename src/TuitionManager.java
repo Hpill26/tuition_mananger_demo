@@ -1,3 +1,4 @@
+package application;
 import java.util.*;
 /**
  *  Manages all other classes in this project, essentially reads in user input and decides

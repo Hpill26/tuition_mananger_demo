@@ -1,3 +1,5 @@
+package application;
+
 /**
  * Growable container class. Creates a studentlist which can be used to add different types of students. Also provides functionality 
  * to remove students from the list and print the list. 
@@ -137,4 +139,54 @@ public class StudentList {
 		   }
 		   
 	   } 
+	   public String printGUI()
+	   {
+		   StringBuilder agg = new StringBuilder(""); 
+		   for(int i = 0; i < numStudents; i ++)
+		   {
+			   agg.append(list[i].toString() + "  Tuition Due: " + list[i].tuitionDue()+ "\n");
+			   
+		   }
+		   return agg.toString();
+	   }
+
+	   public void TestbedStudentList()
+	   {
+		   Student a = new Outstate("Bill" , "a" , 0, true);
+		   Student b = new Outstate("adam" , "a", 0, true);
+		   Student c = new Outstate("Bill" , "a", 0, true);
+		   Student d = new Outstate("Suzie" ,"a", 0, true);
+		   Student e = new Outstate("Tom" , "a", 0, true);
+		   Student f = new Outstate("Dan" ,"a" , 0, true);
+		   Student g = new Outstate("Mike" ,"a", 0, true);
+		   Student h = new Outstate("Amber" ,"a", 0, true);
+		   Student i = new Outstate("Brooke" ,"a", 0, true);
+		   
+		   StudentList test = new StudentList();
+		   test.add(a);
+		   test.add(b);
+		   test.add(c);
+		   test.add(d);
+		   test.add(e);
+		   test.add(f);
+		   test.add(g);
+		   test.add(h);
+		   test.add(i);
+		   
+		   //find works
+		   int p = test.find(e);
+		   System.out.println("4? - " + p);
+		   
+		   //Remove
+		   
+		   if(test.remove(g)) 
+		   {
+			   System.out.println("mike shldnt be there");
+		   }
+		   
+		   
+		   //Print Works
+		   test.print();
+		   }
+	   
 }
